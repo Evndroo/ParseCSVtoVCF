@@ -10,7 +10,7 @@
 
 <body>
   <div id="app">
-    <h1 class="text-center">Converta .csv para .VCF</h1>
+    <h1 class="text-center">Converta .CSV para .VCF</h1>
     <div class="main">
       <div class="container">
         <div class="card">
@@ -20,6 +20,8 @@
             <form method="POST" enctype="multipart/form-data">
               <Input type="file" id="xlsx" ></Input>
             </form>
+            <br>
+            <button id='btnDownload' onclick="download()"  >Download</button> 
             <br>
             <section id="vcf" class="text-center">
                 

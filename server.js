@@ -27,6 +27,7 @@ app.get('/teste.xlsx', function (req, res) {
 })
 
 app.post("/xlsx", upload.single("file"), function(req,res){
+  //Puxa arquivo salvo e monta objeto baseado nele (arquivo excel) 
   let url = req.file.path
   var workbook = new Excel.Workbook();
   workbook.xlsx.readFile(url)
@@ -56,7 +57,10 @@ app.post("/xlsx", upload.single("file"), function(req,res){
         "Categories:myContatcs\n"+
         "END:VCARD\n"
       });
-    res.status(200).send({texto:string})
+
+      //criar arquivo .vcf
+
+    res.status(200).send({texto:string, name:path.basename(req.file.originalname)})
   });
 })
 app.listen(process.env.PORT || 3000)
