@@ -37,8 +37,10 @@ app.post("/xlsx", upload.single("file"), function(req,res){
         if(rowNumber!=1){
           let r = row.values;
           let obj = {
-            nome:r[1],
-            telefone:r[2]
+            codigo:r[1],
+            nome:r[2],
+            telefone:r[3] + ""+ r[4],
+            
           }
           finalObj.push(obj)
         }
@@ -49,7 +51,7 @@ app.post("/xlsx", upload.single("file"), function(req,res){
       finalObj.forEach(function(element){
         string += "BEGIN:VCARD\n"+
         "VERSION:3.0\n"+
-        "FN:OVP-"+element.nome+"\n"+
+        `FN:${element.codigo}-`+element.nome+"\n"+
         "item1.TEL:"+element.telefone+"\n"+
         "Categories:myContatcs\n"+
         "END:VCARD\n"
