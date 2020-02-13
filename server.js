@@ -1,30 +1,62 @@
+/*
+ * Injetando propriedades
+ */
+
 const express = require('express')
 const bodyParser = require('body-parser');
 const path = require('path')
 const multer = require('multer')
 const Excel = require('exceljs');
-
 const uploadManager = require("./upload")
+
+/*
+ * Instanciando dependências 
+ */
+
+
 const upload = multer(uploadManager)
-
-
 const app = express()
+
+/*
+ * Definindo tipos de requisições aceitas
+ */
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
+
+/*
+ *
+ *
+ * Configurando Rotas
+ * 
+ * 
+ */
+
+//Navegação
+
+
 app.get('/', function (req, res) {
-  //res.send({resposta:"ok"})
   res.sendFile(path.join(__dirname+"/index.html"));
 })
+
+
+
+// Códigos
 
 app.get('/main.js', function (req, res) {
     res.sendFile(path.join(__dirname+"/main.js"));
 })
 
-app.get('/teste.xlsx', function (req, res) {
-    res.sendFile(path.join(__dirname+"/teste.xlsx"));
+app.get('/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname+"/style.css"));
 })
+
+
+
+// API de resposta
 
 app.post("/xlsx", upload.single("file"), function(req,res){
   //Puxa arquivo salvo e monta objeto baseado nele (arquivo excel) 

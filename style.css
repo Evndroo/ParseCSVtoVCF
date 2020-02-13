@@ -1,0 +1,14 @@
+.container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#main .card{
+    border-style: dashed;
+    opacity: 0.6;
+    cursor: pointer;
+} 
+
+#main .card:hover{
+    opacity: 1;
+}

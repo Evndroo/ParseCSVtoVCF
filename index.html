@@ -6,32 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Excel to vcf</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div id="app">
     <h1 class="text-center">Converta .CSV para .VCF</h1>
-    <div class="main">
+    <div id="main">
       <div class="container">
         <div class="card">
           <div class="card-body">
-
-            <h3>Arraste um arquivo ou clique aqui para escolher um arquivo</h3>
-            <form method="POST" enctype="multipart/form-data">
-              <Input type="file" id="xlsx" ></Input>
-            </form>
-            <br>
-            <button id='btnDownload' onclick="download()"  >Download</button> 
-            <br>
-            <section id="vcf" class="text-center">
-                
-            </section>
+            <div class="text-center">
+              <form method="POST" enctype="multipart/form-data">
+                <h3>Arraste um arquivo ou clique aqui para escolher um arquivo</h3>
+                <Input type="file" name="xlsx" id="xlsx"></Input>
+                <div id="fileName"></div>
+              </form>
+            </div>
+            
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="main.js"></script>
+    <div id="result" class="container">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            
+            <div class="col-md-4 offset-md-4 text-center">Resultado</div>
+            <div class="col-md-4 text-right">
+              <button id='btnDownload' onclick="download()">Download</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            
+          <section id="vcf" class="col-md text-center">
+          </section>
+            
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
