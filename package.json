@@ -1,0 +1,22 @@
+{
+  "name": "xlsx_to_vcf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "exceljs": "^3.8.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "font-awesome": "^4.7.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2"
+  }
+}
