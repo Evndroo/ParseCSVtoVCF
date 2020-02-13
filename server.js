@@ -42,7 +42,18 @@ app.post("/xlsx", upload.single("file"), function(req,res){
           finalObj.push(obj)
         }
       });
-    res.status(200).send(JSON.stringify(finalObj))
+
+      let string = ""
+
+      finalObj.forEach(function(element){
+        string += "BEGIN:VCARD\n"+
+        "VERSION:3.0\n"+
+        "FN:OVP-"+element.nome+"\n"+
+        "item1.TEL:"+element.telefone+"\n"+
+        "Categories:myContatcs\n"+
+        "END:VCARD\n"
+      });
+    res.status(200).send({texto:string})
   });
 })
 app.listen(3000)

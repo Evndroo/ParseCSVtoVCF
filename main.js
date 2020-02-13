@@ -12,7 +12,7 @@ xlsx.onchange=function(event){
 
   req.onreadystatechange = function() { // Chama a função quando o estado mudar.
     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        console.log(req.response);
+        console.log(JSON.parse(req.response).texto);
     }
 }
 }
