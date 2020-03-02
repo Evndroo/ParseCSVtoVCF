@@ -95,4 +95,21 @@ app.post("/xlsx", upload.single("file"), function(req,res){
     res.status(200).send({texto:string, name:path.basename(req.file.originalname)})
   });
 })
+
+
+
+//Arquivos
+
+app.get("/modelo.csv",function(req,res){
+  res.sendFile(__dirname+"/modelo.csv");
+})
+
+app.get("/icon.jpeg",function(req,res){
+  res.sendFile(__dirname+"/icon.jpeg");
+})
+
+app.get("/upload.jpeg",function(req,res){
+  res.sendFile(__dirname+"/upload.jpeg");
+})
+
 app.listen(process.env.PORT || 3000)

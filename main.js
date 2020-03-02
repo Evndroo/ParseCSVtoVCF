@@ -1,6 +1,12 @@
 const xlsx = document.getElementById("xlsx")
 const fileNameView = document.querySelector("#fileName"); 
 const drag_n_hold = document.querySelector("#main .card");
+const see_more = document.querySelector(".see-more");
+const see_less_x = document.querySelector("#close");
+const see_less = document.querySelector(".see-less");
+const instructions = document.querySelector("#instruction .card-body")
+const btn = document.querySelector("#btnDownload");
+const btnAddFile = document.querySelector("#btnAddFile");
 
 var txt = "", 
     name= "";
@@ -12,7 +18,30 @@ var txt = "",
  * 
  */
 
+
 document.getElementById("result").setAttribute("style","display:none;")
+
+see_less.style.display = "none";
+instructions.style.display = "none";
+
+see_more.addEventListener("click",function(){
+  see_less.style.display = "block"
+  instructions.style.display = "block";
+})
+
+see_less_x.addEventListener("click",function(){
+  see_less.style.display = "none"
+  see_more.style.display = "block"
+  instructions.style.display = "none";
+  
+})
+
+var btnModeloClick = function(){
+  
+  var a = document.createElement("a");
+  a.setAttribute("href","modelo.csv")
+  a.click()
+}
 
 //input type file
 
@@ -30,9 +59,14 @@ xlsx.onchange = function (event) {
   drag_n_hold.addEventListener(eventName, preventDefaults, false)
 })
 
-drag_n_hold.addEventListener("click", function(){
+/*drag_n_hold.addEventListener("click", function(){
   xlsx.click();
-})
+})*/
+
+/*
+btnAddFile.addEventListener("click", function(){
+  xlsx.click();
+})*/
 
 drag_n_hold.addEventListener("drop", function(event){
   event.preventDefault();
@@ -90,3 +124,4 @@ function download() {
     document.body.removeChild(element);
   }
 }
+

@@ -3,16 +3,94 @@
     margin-bottom: 30px;
 }
 
+.btn{
+    
+    border-color: #2AABE5;
+    background-color: #2AABE5;
+    color: white;
+}
+.btn:hover{
+    color: #2AABE5;
+    background-color: white;
+}
+
+.see-more, .see-less>div>h3#close{
+    color: #2AABE5;
+    cursor: pointer;
+}
+
+.see-less{
+    padding-right:15px;
+    padding-top: 5px;
+    border: solid 1.5px #2AABE5;
+    margin-top: 30px;
+}
+
 #main .card{
     border-style: dashed;
-    opacity: 0.6;
-    cursor: pointer;
+    background-color: #f2f2f2;
+    border: 4px #2AABE5 dashed;
 } 
 
-#main .card:hover{
-    opacity: 1;
-}
+
+
 
 #app{
     margin-top:30px;
+}
+
+.table-top{
+    background-color: forestgreen;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+img{
+    margin-bottom: 15px;
+}
+
+/*ícone de excel fica branco*/
+
+.fa-file-excel{
+    color:white;
+}
+
+
+
+
+
+/*estilização da tabela, removendo bordas do redor dos td's*/
+
+#div-table{
+    border: forestgreen 2.5px solid;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-bottom: 20px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    border: black solid 1px;
+}
+
+tr>td:first-child{
+    border-left:none
+}
+
+tr:last-child>td{
+    border-bottom: none;
+}
+
+tr>td:last-child{
+    border-right: none;
+}
+
+tr:first-child>td{
+    border-top-color: forestgreen;
 }
