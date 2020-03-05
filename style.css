@@ -3,6 +3,12 @@
     margin-bottom: 30px;
 }
 
+
+
+#btnAddFile{
+    font-size: large;
+}
+
 .btn{
     
     border-color: #2AABE5;
@@ -14,16 +20,25 @@
     background-color: white;
 }
 
-.see-more, .see-less>div>h3#close{
+#close{
+    padding-right: 15px;
+}
+
+.see-more > h6 {
+    font-size: inherit;
+}
+
+.see-more, #close{
     color: #2AABE5;
     cursor: pointer;
+    font-size: 22px;
 }
 
 .see-less{
-    padding-right:15px;
     padding-top: 5px;
     border: solid 1.5px #2AABE5;
-    margin-top: 30px;
+    margin-top: 30px;    
+    background-color: #f2f2f2;
 }
 
 #main .card{
@@ -31,8 +46,6 @@
     background-color: #f2f2f2;
     border: 4px #2AABE5 dashed;
 } 
-
-
 
 
 #app{
@@ -60,8 +73,6 @@ img{
 
 
 
-
-
 /*estilização da tabela, removendo bordas do redor dos td's*/
 
 #div-table{
@@ -69,6 +80,7 @@ img{
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-bottom: 20px;
+    background-color: white;
 }
 
 table{
@@ -94,3 +106,105 @@ tr>td:last-child{
 tr:first-child>td{
     border-top-color: forestgreen;
 }
+
+
+
+
+#app > .text-center > h4{
+    width: 45%;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+@media (max-width: 966px) 
+{
+    #app > .text-center > h4{
+        width: 55%;
+    }
+}
+
+@media (max-width: 792px) 
+{
+    #app > .text-center > h4{
+        width: 65%;
+    }
+}
+
+@media (max-width: 669px){
+    #app > .text-center > h4{
+        width: 80%;
+        font-size: 18px;
+    }
+
+    
+    .see-more{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 446px){
+    #app > .text-center > h4{
+        font-size: 16px;
+    }
+    
+    .see-more{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 412px) 
+{
+    form > h3{
+        font-size: x-large;
+    }
+    #app > .text-center > h4{
+        font-size: 14px;
+    }
+
+    
+    .see-more{
+        font-size: 14px;
+    }
+
+    
+    #btnAddFile{
+        font-size: medium;
+    }
+}
+
+@media (max-width: 365px){
+
+    form > h3 {
+        font-size: 22px;
+    }
+
+    
+    #app > .text-center > h4{
+        font-size: 12px;
+    }
+
+    .see-more{
+        font-size: 12px;
+    }
+
+    #btnAddFile{
+        font-size: small;
+    }
+}
+
+
+@media (max-width: 341px){
+
+    form > h3 {
+        font-size: 20px;
+    }
+
+    .see-less > .card-body > h3 {
+        font-size: x-large;
+    }
+
+    td{
+        font-size: medium;
+    }
+}
+

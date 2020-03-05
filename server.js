@@ -104,6 +104,10 @@ app.get("/modelo.csv",function(req,res){
   res.sendFile(__dirname+"/modelo.csv");
 })
 
+app.get("/favicon.ico",function(req,res){
+  res.sendFile(__dirname+"/favicon.ico");
+})
+
 app.get("/icon.jpeg",function(req,res){
   res.sendFile(__dirname+"/icon.jpeg");
 })
