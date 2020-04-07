@@ -15,51 +15,50 @@
 <body>
   <div id="app">
     <div class="text-center">
-      <img src="/icon.jpeg" >
-      <h4>Converta sua lista de leads no formato .CSV ou .XSLX em um arquivo de contatos .VCF</h4>
+      <img src="/icon.png" class="logo">
+      <h4>Converta sua lista de leads no formato .CSV ou .XSLX &#013 em um arquivo de contatos .VCF</h4>
     </div>
-    <div id="instruction">
-      <div class="container">
-        <div class="text-center see-more">
-          <h6>Veja aqui o modelo da planilha</h6>
+    <div id="instruction" class="container">
+      <div class="text-center see-more">
+        <h6>Veja aqui o modelo da planilha</h6>
+      </div>
+      <div class="card see-less">
+        <div class="text-right ">
+          <H3 id="close">X</H3>
         </div>
-        <div class="card see-less">
-          <div class="text-right ">
-            <H3 id="close">X</H3>
+        <div class="card-body text-center">
+
+          <h3>Modelo de planilha:</h3>
+          <br>
+          <div class="text-center table-top">
+            <i class="fas fa-file-excel fa-2x"></i>
           </div>
-          <div class="card-body text-center">
-            
-              <h3>Modelo de planilha:</h3>
-              <br>
-              <div class="text-center table-top">
-                <i class="fas fa-file-excel fa-2x"></i>
-              </div>
-              <div class="text-center" id="div-table">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Código</td>
-                      <td>Nome</td>
-                      <td>DDD</td>
-                      <td>Telefone</td>
-                    </tr>
-                    <tr>
-                      <td>Escola</td>
-                      <td>Maria</td>
-                      <td>11</td>
-                      <td>981920381</td>
-                    </tr>
-                    <tr>
-                      <td>Trabalho</td>
-                      <td>Jane</td>
-                      <td>13</td>
-                      <td>917294024</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <button class="btn" onclick="btnModeloClick()"> <i class="fa fa-download" aria-hidden="true"></i> Download do modelo</button>
+          <div class="text-center" id="div-table">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Código</td>
+                  <td>Nome</td>
+                  <td>DDD</td>
+                  <td>Telefone</td>
+                </tr>
+                <tr>
+                  <td>Escola</td>
+                  <td>Maria</td>
+                  <td>11</td>
+                  <td>981920381</td>
+                </tr>
+                <tr>
+                  <td>Trabalho</td>
+                  <td>Jane</td>
+                  <td>13</td>
+                  <td>917294024</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <br>
+          <button class="btn" onclick="btnModeloClick()"> <i class="fa fa-download" aria-hidden="true"></i> Download do modelo</button>
         </div>
       </div>
     </div>
@@ -69,14 +68,14 @@
         <div class="card">
           <div class="card-body">
             <div class="text-center">
-              <img src="/upload.jpeg" alt="">
+              <img src="/upload.png" class="uploadIMG">
               <form method="POST" enctype="multipart/form-data">
                 <h3>Arraste e solte um arquivo .XLSX ou .CSV aqui</h3>
                 <p>Ou, se preferir...</p>
-              
-              <div class="btn" id="btnAddFile" onclick="document.getElementById('xlsx').click()">  
-                Escolha um arquivo do computador
-              </div>
+
+                <div class="btn" id="btnAddFile" onclick="document.getElementById('xlsx').click()">
+                  Escolha um arquivo do computador
+                </div>
                 <Input type="file" name="xlsx" id="xlsx"></Input>
                 <div id="fileName"></div>
               </form>
@@ -85,12 +84,14 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
     <div id="result" class="container">
-      <div class="card">
+      <div class="card ">
         <div class="card-header">
           <div class="row">
-            <div class="col-md-4 offset-md-4 text-center"><h3>Resultado</h3></div>
+            <div class="col-md-4 offset-md-4 text-center">
+              <h3>Resultado</h3>
+            </div>
             <div class="col-md-4 text-right">
               <button id='btnDownload' class="btn" onclick="download()">
                 <i class="fa fa-download" aria-hidden="true"></i>

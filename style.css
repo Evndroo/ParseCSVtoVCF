@@ -1,13 +1,15 @@
+
+/*containers*/
+
 .container{
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 
-
-#btnAddFile{
-    font-size: large;
-}
+/*
+ * Botões
+ */
 
 .btn{
     
@@ -20,12 +22,36 @@
     background-color: white;
 }
 
-#close{
-    padding-right: 15px;
+
+
+/*
+ * Topo da pagina
+ */
+
+
+#app{
+    margin-top:40px;
 }
+
+#app > .text-center > h4{
+    width: 42%;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+
+
+
+/*
+ * Texto de ver modelo e de fechar pop-up do modelo 
+ */
 
 .see-more > h6 {
     font-size: inherit;
+}
+
+#close{
+    padding-right: 15px;
 }
 
 .see-more, #close{
@@ -34,12 +60,34 @@
     font-size: 22px;
 }
 
+
+/*
+ * Card com tabela de modelo e botão de baixar modelo
+ */
+
+
 .see-less{
-    padding-top: 5px;
+    padding-top: 4px;
     border: solid 1.5px #2AABE5;
     margin-top: 30px;    
     background-color: #f2f2f2;
 }
+
+.see-less h3{
+    margin-bottom: 0px;
+}
+
+.see-less .card-body{
+    padding: 0px 45px 30px 45px;
+}
+
+
+
+
+
+/*
+ * Upload div style
+ */
 
 #main .card{
     border-style: dashed;
@@ -47,10 +95,28 @@
     border: 4px #2AABE5 dashed;
 } 
 
-
-#app{
-    margin-top:30px;
+#btnAddFile{
+    font-size: large;
 }
+
+
+
+/*
+ *Imagens
+ */
+
+.uploadIMG{
+    width:160px;
+    margin-bottom: 15px;
+}
+.logo{
+    width: 330px;
+    margin-bottom: 15px;
+}
+
+
+/*estilização da tabela, removendo bordas do redor dos td's e colocando borda com ícone do excel*/
+
 
 .table-top{
     background-color: forestgreen;
@@ -61,25 +127,10 @@
 }
 
 
-img{
-    margin-bottom: 15px;
-}
-
-/*ícone de excel fica branco*/
-
-.fa-file-excel{
-    color:white;
-}
-
-
-
-/*estilização da tabela, removendo bordas do redor dos td's*/
-
 #div-table{
     border: forestgreen 2.5px solid;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    margin-bottom: 20px;
     background-color: white;
 }
 
@@ -107,16 +158,19 @@ tr:first-child>td{
     border-top-color: forestgreen;
 }
 
+/*ícone de excel fica branco*/
 
-
-
-#app > .text-center > h4{
-    width: 45%;
-    margin: 0 auto;
-    font-size: 22px;
+.fa-file-excel{
+    color:white;
 }
 
-@media (max-width: 966px) 
+
+
+/*
+ * media queries 
+ */
+
+ @media (max-width: 966px) 
 {
     #app > .text-center > h4{
         width: 55%;
@@ -207,4 +261,3 @@ tr:first-child>td{
         font-size: medium;
     }
 }
-

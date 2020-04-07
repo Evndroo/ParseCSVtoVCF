@@ -23,7 +23,7 @@ const app = express()
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname+"/index.html"));
+  res.sendFile(path.join(__dirname + "/index.html"));
 })
 
 
@@ -47,33 +47,33 @@ app.get('/', function (req, res) {
 // Códigos
 
 app.get('/main.js', function (req, res) {
-    res.sendFile(path.join(__dirname+"/main.js"));
+  res.sendFile(path.join(__dirname + "/main.js"));
 })
 
 app.get('/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname+"/style.css"));
+  res.sendFile(path.join(__dirname + "/style.css"));
 })
 
 
 
 // API de resposta
 
-app.post("/xlsx", upload.single("file"), function(req,res){
+app.post("/xlsx", upload.single("file"), function (req, res) {
   //Puxa arquivo salvo e monta objeto baseado nele (arquivo excel) 
   let url = req.file.path
   var workbook = new Excel.Workbook();
   workbook.xlsx.readFile(url)
-  .then(worksheet => {
+    .then(worksheet => {
       let sheet = worksheet.getWorksheet(1);
       let finalObj = [];
-      sheet.eachRow(function(row, rowNumber) {
-        if(rowNumber!=1){
+      sheet.eachRow(function (row, rowNumber) {
+        if (rowNumber != 1) {
           let r = row.values;
           let obj = {
-            codigo:r[1],
-            nome:r[2],
-            telefone:r[3] + ""+ r[4],
-            
+            codigo: r[1],
+            nome: r[2],
+            telefone: r[3] + "" + r[4],
+
           }
           finalObj.push(obj)
         }
@@ -81,39 +81,38 @@ app.post("/xlsx", upload.single("file"), function(req,res){
 
       let string = ""
 
-      finalObj.forEach(function(element){
-        string += "BEGIN:VCARD\n"+
-        "VERSION:3.0\n"+
-        `FN:${element.codigo}-`+element.nome+"\n"+
-        "item1.TEL:"+element.telefone+"\n"+
-        "Categories:myContatcs\n"+
-        "END:VCARD\n"
+      finalObj.forEach(function (element) {
+        string += "BEGIN:VCARD\n" +
+          "VERSION:3.0\n" +
+          `FN:${element.codigo}-` + element.nome + "\n" +
+          "item1.TEL:" + element.telefone + "\n" +
+          "Categories:myContatcs\n" +
+          "END:VCARD\n"
       });
 
       //criar arquivo .vcf
-
-    res.status(200).send({texto:string, name:path.basename(req.file.originalname)})
-  });
+      res.status(200).send({ texto: string, name: path.basename(req.file.originalname, path.extname(req.file.originalname)) })
+    });
 })
 
 
 
 //Arquivos
 
-app.get("/modelo.csv",function(req,res){
-  res.sendFile(__dirname+"/modelo.csv");
+app.get("/modelo.csv", function (req, res) {
+  res.sendFile(__dirname + "/modelo.csv");
 })
 
-app.get("/favicon.ico",function(req,res){
-  res.sendFile(__dirname+"/favicon.ico");
+app.get("/favicon.ico", function (req, res) {
+  res.sendFile(__dirname + "/favicon.ico");
 })
 
-app.get("/icon.jpeg",function(req,res){
-  res.sendFile(__dirname+"/icon.jpeg");
+app.get("/icon.png", function (req, res) {
+  res.sendFile(__dirname + "/icon.png");
 })
 
-app.get("/upload.jpeg",function(req,res){
-  res.sendFile(__dirname+"/upload.jpeg");
+app.get("/upload.png", function (req, res) {
+  res.sendFile(__dirname + "/upload.png");
 })
 
 app.listen(process.env.PORT || 3000)

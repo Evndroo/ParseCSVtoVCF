@@ -106,6 +106,7 @@ function callServer(file){
       name = JSON.parse(req.response).name;
       vcf.innerHTML = txt.split("\n").join("<br>");
       document.getElementById("result").setAttribute("style","display:block");
+      window.location.href= "/#result";
     }
   }
 }
@@ -125,3 +126,56 @@ function download() {
   }
 }
 
+
+
+function colSM(x) {
+  if (x.matches) { // If media query matches
+    let parent = document.querySelector(".card-header .row");
+    parent.children[0].classList[0] = "col-sm-4"
+    parent.children[0].classList[0] = "offset-sm-4"
+    parent.children[1].classList[0] = "col-sm-4"
+    
+  } 
+}
+
+var x = window.matchMedia("(max-width: 767px)")
+colSM(x) // Call listener function at run time
+x.addListener(colSM)
+
+function colSM(x) {
+  if (x.matches) { // If media query matches
+    let parent = document.querySelector(".card-header .row");
+    parent.children[0].classList[0] = "col-sm-4"
+    parent.children[0].classList[0] = "offset-sm-4"
+    parent.children[1].classList[0] = "col-sm-4"
+    
+  } 
+}
+
+var x = window.matchMedia("(max-width: 575px)")
+colXM(x) // Call listener function at run time
+x.addListener(colXM)
+
+function colXM(x) {
+  if (x.matches) { // If media query matches
+    let parent = document.querySelector(".card-header .row");
+    parent.children[0].classList[0] = "col-xm-4"
+    parent.children[0].classList[0] = "offset-xm-4"
+    parent.children[1].classList[0] = "col-xm-4"
+    
+  } 
+}
+
+var x = window.matchMedia("(min-width: 767px)")
+colSM(x) // Call listener function at run time
+x.addListener(colSM)
+
+function colSM(x) {
+  if (x.matches) { // If media query matches
+    let parent = document.querySelector(".card-header .row");
+    parent.children[0].classList[0] = "col-md-4"
+    parent.children[0].classList[0] = "offset-md-4"
+    parent.children[1].classList[0] = "col-md-4"
+    
+  } 
+}
