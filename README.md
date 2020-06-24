@@ -16,3 +16,5 @@ Após a importação de uma planilha com os dados como esta aqui:
 ![Planilha](https://raw.githubusercontent.com/Evndroo/ParseCSVtoVCF/master/panilha.PNG)
 
 Obterá a seguinte pré-vizualização do arquivo VCF:
+
+![Result](https://raw.githubusercontent.com/Evndroo/ParseCSVtoVCF/master/Resultado.PNG)
